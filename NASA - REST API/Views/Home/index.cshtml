@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Startsida";
+}
+
+<h1 class="text-primary">Välkommen till Mars Rover Photos</h1>
+<br />
+<h4>Du kommer att välja mellan flera sökparametrar i vårt REST-API.</h4>
+
+<div class="row" style="margin-top:20px;">
+    <div class="col-3">
+        <form>
+            <select id="optionSelect" class="browser-default custom-select" onchange="ShowOption();">
+                <option value="0" disabled selected>Välj ett alternativ</option>
+                <option value="1">Visa alla Rovers</option>
+                <option value="2">Sök efter id</option>
+                <option value="3">Sök efter namn</option>
+                <option value="4">Sök efter datum</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="col-3">
+        <div id="optId" style="visibility: hidden; display: none"></div>
+
+        <div id="optNamn" style="visibility: hidden; display: none"></div>
+
+        <div id="optDate" style="visibility: hidden; display: none">
+           <input id="picker" type="date" class="browser-default custom-select" placeholder="Väjl en datum" onchange="auxShowRovers3();"> 
+        </div>
+    </div>
+
+    <div class="col-6 text-primary" id="info"></div>
+    
+</div>
+
+<div class="row" style="margin-top: 50px">
+    <div class="col" id="rovers" style="visibility: hidden"></div>
+</div>
